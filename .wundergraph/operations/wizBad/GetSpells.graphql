@@ -1,0 +1,19 @@
+# This file is auto generated.
+# Remove/modify this header if you want to customize the operation.
+query wizBad_getSpells_query($Name: String, $Type: wizBad_SpellTypeInput, $Incantation: String) {
+  wizBad_getSpells(Name: $Name, Type: $Type, Incantation: $Incantation) {
+    ... on UnspecifiedHttpResponse {
+      statusCode
+    }
+    ... on wizBad_SpellDtoSuccess {
+      id
+      name
+      incantation
+      effect
+      canBeVerbal
+      type
+      light
+      creator
+    }
+  }
+}

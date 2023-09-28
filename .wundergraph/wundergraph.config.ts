@@ -7,8 +7,8 @@ import {
 import operations from './wundergraph.operations';
 import server from './wundergraph.server';
 
-const wiz = introspect.openApi({
-  apiNamespace: 'wiz',
+const wizGood = introspect.openApi({
+  apiNamespace: 'wizGood',
   source: {
     kind: 'file',
     filePath: './schema/swagger.json',
@@ -19,16 +19,28 @@ const wiz = introspect.openApi({
   ),
   // statusCodeUnions: true,
 });
+const wizBad = introspect.openApi({
+  apiNamespace: 'wizBad',
+  source: {
+    kind: 'file',
+    filePath: './schema/swagger.json',
+  },
+  baseURL: new EnvironmentVariable(
+    'WIZ',
+    'https://wizard-world-api.herokuapp.com/'
+  ),
+  statusCodeUnions: true,
+});
 
 // configureWunderGraph emits the configuration
 configureWunderGraphApplication({
-  apis: [wiz],
+  apis: [wizGood, wizBad],
   server,
   operations,
   generate: {
     codeGenerators: [],
     operationsGenerator: (config) => {
-      config.includeNamespaces('wiz');
+      config.includeNamespaces('wizGood', 'wizBad');
     },
   },
   experimental: {

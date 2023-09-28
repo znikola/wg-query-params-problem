@@ -1,0 +1,13 @@
+# This file is auto generated.
+# Remove/modify this header if you want to customize the operation.
+query wizBad_getIngredients_query($Name: String) {
+  wizBad_getIngredients(Name: $Name) {
+    ... on UnspecifiedHttpResponse {
+      statusCode
+    }
+    ... on wizBad_IngredientDtoSuccess {
+      id
+      name
+    }
+  }
+}

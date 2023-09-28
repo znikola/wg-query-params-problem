@@ -4,7 +4,7 @@ const client = createClient();
 
 async function program() {
   const result = await client.query({
-    operationName: 'wiz/GetWizards',
+    operationName: 'wizBad/GetWizards',
     input: { FirstName: 'Tom', LastName: 'Riddle' },
   });
   console.log('result', result.data);

@@ -1,7 +1,7 @@
 # This file is auto generated.
 # Remove/modify this header if you want to customize the operation.
-query wiz_getIngredients_query($Name: String) {
-  wiz_getIngredients(Name: $Name) {
+query wizGood_getIngredientsById_query($id: String!) {
+  wizGood_getIngredientsById(id: $id) {
     id
     name
   }
