@@ -1,0 +1,23 @@
+# This file is auto generated.
+# Remove/modify this header if you want to customize the operation.
+query wizGood_Elixirs_by_id_query($id: UUID!) {
+  wizGood_Elixirs_by_id(id: $id) {
+    characteristics
+    difficulty
+    effect
+    id
+    ingredients {
+      id
+      name
+    }
+    inventors {
+      firstName
+      id
+      lastName
+    }
+    manufacturer
+    name
+    sideEffects
+    time
+  }
+}

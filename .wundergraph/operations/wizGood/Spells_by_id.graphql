@@ -1,0 +1,14 @@
+# This file is auto generated.
+# Remove/modify this header if you want to customize the operation.
+query wizGood_Spells_by_id_query($id: UUID!) {
+  wizGood_Spells_by_id(id: $id) {
+    canBeVerbal
+    creator
+    effect
+    id
+    incantation
+    light
+    name
+    type
+  }
+}

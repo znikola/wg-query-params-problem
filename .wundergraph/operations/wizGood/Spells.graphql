@@ -1,0 +1,14 @@
+# This file is auto generated.
+# Remove/modify this header if you want to customize the operation.
+query wizGood_Spells_query($Incantation: String, $Name: String, $Type: wizGood_SpellType) {
+  wizGood_Spells(Incantation: $Incantation, Name: $Name, Type: $Type) {
+    canBeVerbal
+    creator
+    effect
+    id
+    incantation
+    light
+    name
+    type
+  }
+}
